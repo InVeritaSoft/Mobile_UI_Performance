@@ -42,7 +42,7 @@ public class ListPerformanceTest {
 
     @Test
     public void scroolTest(){
-        for(int i = 0; i < 10;i++){
+        for(int i = 0; i < 1 ;i++){
             forward();
             revert();
         }
@@ -53,61 +53,61 @@ public class ListPerformanceTest {
                 RecyclerViewActions.scrollToPosition(10)
                 //actionOnItemAtPosition(step, scrollTo())
         );
-        onView(isRoot()).perform(waitFor(600));
+        onView(isRoot()).perform(waitFor(1100));
 
         onView(withId(R.id.recyclerview)).perform(
                 RecyclerViewActions.scrollToPosition(20)
                 //actionOnItemAtPosition(step, scrollTo())
         );
-        onView(isRoot()).perform(waitFor(600));
+        onView(isRoot()).perform(waitFor(1100));
 
         onView(withId(R.id.recyclerview)).perform(
                 RecyclerViewActions.scrollToPosition(30)
                 //actionOnItemAtPosition(step, scrollTo())
         );
-        onView(isRoot()).perform(waitFor(600));
+        onView(isRoot()).perform(waitFor(1100));
 
         onView(withId(R.id.recyclerview)).perform(
                 RecyclerViewActions.scrollToPosition(40)
                 //actionOnItemAtPosition(step, scrollTo())
         );
-        onView(isRoot()).perform(waitFor(600));
+        onView(isRoot()).perform(waitFor(1100));
 
         onView(withId(R.id.recyclerview)).perform(
                 RecyclerViewActions.scrollToPosition(50)
                 //actionOnItemAtPosition(step, scrollTo())
         );
-        onView(isRoot()).perform(waitFor(600));
+        onView(isRoot()).perform(waitFor(1100));
 
         onView(withId(R.id.recyclerview)).perform(
                 RecyclerViewActions.scrollToPosition(60)
                 //actionOnItemAtPosition(step, scrollTo())
         );
-        onView(isRoot()).perform(waitFor(600));
+        onView(isRoot()).perform(waitFor(1100));
 
         onView(withId(R.id.recyclerview)).perform(
                 RecyclerViewActions.scrollToPosition(70)
                 //actionOnItemAtPosition(step, scrollTo())
         );
-        onView(isRoot()).perform(waitFor(600));
+        onView(isRoot()).perform(waitFor(1100));
 
         onView(withId(R.id.recyclerview)).perform(
                 RecyclerViewActions.scrollToPosition(80)
                 //actionOnItemAtPosition(step, scrollTo())
         );
-        onView(isRoot()).perform(waitFor(600));
+        onView(isRoot()).perform(waitFor(1100));
 
         onView(withId(R.id.recyclerview)).perform(
                 RecyclerViewActions.scrollToPosition(90)
                 //actionOnItemAtPosition(step, scrollTo())
         );
-        onView(isRoot()).perform(waitFor(600));
+        onView(isRoot()).perform(waitFor(1100));
 
         onView(withId(R.id.recyclerview)).perform(
                 RecyclerViewActions.scrollToPosition(100)
                 //actionOnItemAtPosition(step, scrollTo())
         );
-        onView(isRoot()).perform(waitFor(600));
+        onView(isRoot()).perform(waitFor(1100));
     }
 
     public void revert(){
@@ -115,61 +115,61 @@ public class ListPerformanceTest {
                 RecyclerViewActions.scrollToPosition(90)
                 //actionOnItemAtPosition(step, scrollTo())
         );
-        onView(isRoot()).perform(waitFor(600));
+        onView(isRoot()).perform(waitFor(1100));
 
         onView(withId(R.id.recyclerview)).perform(
                 RecyclerViewActions.scrollToPosition(80)
                 //actionOnItemAtPosition(step, scrollTo())
         );
-        onView(isRoot()).perform(waitFor(600));
+        onView(isRoot()).perform(waitFor(1100));
 
         onView(withId(R.id.recyclerview)).perform(
                 RecyclerViewActions.scrollToPosition(70)
                 //actionOnItemAtPosition(step, scrollTo())
         );
-        onView(isRoot()).perform(waitFor(600));
+        onView(isRoot()).perform(waitFor(1100));
 
         onView(withId(R.id.recyclerview)).perform(
                 RecyclerViewActions.scrollToPosition(60)
                 //actionOnItemAtPosition(step, scrollTo())
         );
-        onView(isRoot()).perform(waitFor(600));
+        onView(isRoot()).perform(waitFor(1100));
 
         onView(withId(R.id.recyclerview)).perform(
                 RecyclerViewActions.scrollToPosition(50)
                 //actionOnItemAtPosition(step, scrollTo())
         );
-        onView(isRoot()).perform(waitFor(600));
+        onView(isRoot()).perform(waitFor(1100));
 
         onView(withId(R.id.recyclerview)).perform(
                 RecyclerViewActions.scrollToPosition(40)
                 //actionOnItemAtPosition(step, scrollTo())
         );
-        onView(isRoot()).perform(waitFor(600));
+        onView(isRoot()).perform(waitFor(1100));
 
         onView(withId(R.id.recyclerview)).perform(
                 RecyclerViewActions.scrollToPosition(30)
                 //actionOnItemAtPosition(step, scrollTo())
         );
-        onView(isRoot()).perform(waitFor(600));
+        onView(isRoot()).perform(waitFor(1100));
 
         onView(withId(R.id.recyclerview)).perform(
                 RecyclerViewActions.scrollToPosition(20)
                 //actionOnItemAtPosition(step, scrollTo())
         );
-        onView(isRoot()).perform(waitFor(600));
+        onView(isRoot()).perform(waitFor(1100));
 
         onView(withId(R.id.recyclerview)).perform(
                 RecyclerViewActions.scrollToPosition(10)
                 //actionOnItemAtPosition(step, scrollTo())
         );
-        onView(isRoot()).perform(waitFor(600));
+        onView(isRoot()).perform(waitFor(1100));
 
         onView(withId(R.id.recyclerview)).perform(
                 RecyclerViewActions.scrollToPosition(0)
                 //actionOnItemAtPosition(step, scrollTo())
         );
-        onView(isRoot()).perform(waitFor(600));
+        onView(isRoot()).perform(waitFor(1100));
     }
 
 
