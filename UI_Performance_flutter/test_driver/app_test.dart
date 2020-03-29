@@ -33,7 +33,7 @@ void main() {
 
       var bottom  = await driver.getBottomLeft(listView);
       var top  = await driver.getTopLeft(listView);
-      var step = (bottom.dy - top.dy)*0.8;
+      var step = (bottom.dy - top.dy)*0.6;
 
 
       final item0Finder = find.byValueKey('item_0_text');
