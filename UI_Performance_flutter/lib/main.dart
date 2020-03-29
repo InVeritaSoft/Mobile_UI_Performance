@@ -33,11 +33,11 @@ class TestPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(title),
-      ),
-      body: ListView.builder(
+      body: ListView.separated(
         key: ValueKey('long_list'),
+        separatorBuilder: (context,int){
+          return Divider();
+        },
         itemCount: 101,
         itemBuilder: (context,index){
           return  Container(

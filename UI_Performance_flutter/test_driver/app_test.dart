@@ -1,8 +1,11 @@
 
-@Timeout(const Duration(seconds: 45))
+
 // Imports the Flutter Driver API.
 import 'package:flutter_driver/flutter_driver.dart';
 import 'package:test/test.dart';
+
+const pauseScroolDuration = Duration(seconds: 2);
+const  scroolDuration =  Duration(milliseconds: 800);
 
 void main() {
 
@@ -26,116 +29,55 @@ void main() {
 
     test('scrool test', () async {
 
+      final listView = find.byValueKey('long_list');
+
+      var bottom  = await driver.getBottomLeft(listView);
+      var top  = await driver.getTopLeft(listView);
+      var step = (bottom.dy - top.dy)*0.8;
+
+
       final item0Finder = find.byValueKey('item_0_text');
       expect(await driver.getText(item0Finder), '0');
 
-      var forwart = () async {
+      var scrollUntilVisible = (
+          FlutterDriver driver,
+          SerializableFinder scrollable,
+          SerializableFinder item, {
+            Duration scroolDuration = const  Duration(milliseconds: 100),
+            Duration pauseDuration = const  Duration(milliseconds: 500),
+            double alignment = 0.0,
+            double dxScroll = 0.0,
+            double dyScroll = 0.0,
+          }) async {
+        assert(scrollable != null);
+        assert(item != null);
+        assert(alignment != null);
+        assert(dxScroll != null);
+        assert(dyScroll != null);
+        assert(dxScroll != 0.0 || dyScroll != 0.0);
+        bool isVisible = false;
+        await Future<void>.delayed(pauseDuration);
+        driver.waitFor(item).then<void>((_) { isVisible = true; });
+        while (!isVisible) {
+          await driver.scroll(scrollable, dxScroll, dyScroll, scroolDuration);
+          await Future<void>.delayed(pauseDuration);
+        }
+        return driver.scrollIntoView(item, alignment: alignment);
+      };
+
+      var forwart = (step) async {
+
         final listFinder = find.byValueKey('long_list');
-        final item10Finder = find.byValueKey('item_10_text');
-        final item20Finder = find.byValueKey('item_20_text');
-        final item30Finder = find.byValueKey('item_30_text');
-        final item40Finder = find.byValueKey('item_40_text');
-        final item50Finder = find.byValueKey('item_50_text');
-        final item60Finder = find.byValueKey('item_60_text');
-        final item70Finder = find.byValueKey('item_70_text');
-        final item80Finder = find.byValueKey('item_80_text');
-        final item90Finder = find.byValueKey('item_90_text');
+
         final item100Finder = find.byValueKey('item_100_text');
-        final step = -(100.0 * 10);
-        await driver.scrollUntilVisible(
-          listFinder,
-          item10Finder,
-          dyScroll: step,
-        );
-        expect(
-          await driver.getText(item10Finder),
-          '10',
-        );
-        await driver.scrollUntilVisible(
-          listFinder,
-          item20Finder,
-          dyScroll: step,
-        );
-        expect(
-          await driver.getText(item20Finder),
-          '20',
-        );
-        await driver.scrollUntilVisible(
-          listFinder,
-          item30Finder,
-          dyScroll: step,
-        );
-        expect(
-          await driver.getText(item30Finder),
-          '30',
-        );
-        await driver.scrollUntilVisible(
-          listFinder,
-          item40Finder,
-          dyScroll: step,
-        );
-        expect(
-          await driver.getText(item40Finder),
-          '40',
-        );
-        await driver.scrollUntilVisible(
-          listFinder,
-          item50Finder,
-          dyScroll: step,
-        );
-        expect(
-          await driver.getText(item50Finder),
-          '50',
-        );
-        await driver.scrollUntilVisible(
-          listFinder,
-          item60Finder,
-          dyScroll: step,
-        );
-        expect(
-          await driver.getText(item60Finder),
-          '60',
-        );
-        await driver.scrollUntilVisible(
-          listFinder,
-          item70Finder,
-          dyScroll: step,
-        );
-        expect(
-          await driver.getText(item70Finder),
-          '70',
-        );
-        await driver.scrollUntilVisible(
-          listFinder,
-          item80Finder,
-          dyScroll: step,
-        );
-        expect(
-          await driver.getText(item80Finder),
-          '80',
-        );
-        await driver.scrollUntilVisible(
-          listFinder,
-          item80Finder,
-          dyScroll: step,
-        );
-        expect(
-          await driver.getText(item80Finder),
-          '80',
-        );
-        await driver.scrollUntilVisible(
-          listFinder,
-          item90Finder,
-          dyScroll: step,
-        );
-        expect(
-          await driver.getText(item90Finder),
-          '90',
-        );
-        await driver.scrollUntilVisible(
+
+        await scrollUntilVisible(
+          driver,
           listFinder,
           item100Finder,
           dyScroll: step,
+          scroolDuration: scroolDuration,
+          pauseDuration: pauseScroolDuration
         );
         expect(
           await driver.getText(item100Finder),
@@ -143,105 +85,16 @@ void main() {
         );
       };
 
-      var revert = () async {
+      var revert = (step) async {
         final listFinder = find.byValueKey('long_list');
         final item0Finder = find.byValueKey('item_0_text');
-        final item10Finder = find.byValueKey('item_10_text');
-        final item20Finder = find.byValueKey('item_20_text');
-        final item30Finder = find.byValueKey('item_30_text');
-        final item40Finder = find.byValueKey('item_40_text');
-        final item50Finder = find.byValueKey('item_50_text');
-        final item60Finder = find.byValueKey('item_60_text');
-        final item70Finder = find.byValueKey('item_70_text');
-        final item80Finder = find.byValueKey('item_80_text');
-        final item90Finder = find.byValueKey('item_90_text');
-        final step = (100.0 * 10);
-
-        await driver.scrollUntilVisible(
-          listFinder,
-          item90Finder,
-          dyScroll: step,
-        );
-        expect(
-          await driver.getText(item90Finder),
-          '90',
-        );
-        await driver.scrollUntilVisible(
-          listFinder,
-          item80Finder,
-          dyScroll: step,
-        );
-        expect(
-          await driver.getText(item80Finder),
-          '80',
-        );
-        await driver.scrollUntilVisible(
-          listFinder,
-          item70Finder,
-          dyScroll: step,
-        );
-        expect(
-          await driver.getText(item70Finder),
-          '70',
-        );
-        await driver.scrollUntilVisible(
-          listFinder,
-          item60Finder,
-          dyScroll: step,
-        );
-        expect(
-          await driver.getText(item60Finder),
-          '60',
-        );
-        await driver.scrollUntilVisible(
-          listFinder,
-          item50Finder,
-          dyScroll: step,
-        );
-        expect(
-          await driver.getText(item50Finder),
-          '50',
-        );
-        await driver.scrollUntilVisible(
-          listFinder,
-          item40Finder,
-          dyScroll: step,
-        );
-        expect(
-          await driver.getText(item40Finder),
-          '40',
-        );
-        await driver.scrollUntilVisible(
-          listFinder,
-          item30Finder,
-          dyScroll: step,
-        );
-        expect(
-          await driver.getText(item30Finder),
-          '30',
-        );
-        await driver.scrollUntilVisible(
-          listFinder,
-          item20Finder,
-          dyScroll: step,
-        );
-        expect(
-          await driver.getText(item20Finder),
-          '20',
-        );
-        await driver.scrollUntilVisible(
-          listFinder,
-          item10Finder,
-          dyScroll: step,
-        );
-        expect(
-          await driver.getText(item10Finder),
-          '10',
-        );
-        await driver.scrollUntilVisible(
+        await scrollUntilVisible(
+          driver,
           listFinder,
           item0Finder,
           dyScroll: step,
+          scroolDuration: scroolDuration,
+          pauseDuration: pauseScroolDuration
         );
         expect(
           await driver.getText(item0Finder),
@@ -250,10 +103,14 @@ void main() {
       };
 
       for(int i=0;i<1;i++){
-        await forwart();
-        await revert();
+        await forwart(-step);
+        await revert(step);
       }
     }, timeout: Timeout(Duration(minutes: 5)));
 
   });
+
+
+
+
 }
