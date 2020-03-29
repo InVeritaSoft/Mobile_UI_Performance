@@ -7,6 +7,7 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.test.core.app.ActivityScenario;
+import androidx.test.espresso.NoMatchingViewException;
 import androidx.test.espresso.UiController;
 import androidx.test.espresso.ViewAction;
 import androidx.test.espresso.action.GeneralLocation;
@@ -18,6 +19,8 @@ import androidx.test.espresso.intent.rule.IntentsTestRule;
 import androidx.test.espresso.matcher.ViewMatchers;
 import androidx.test.filters.LargeTest;
 import androidx.test.runner.AndroidJUnit4;
+
+import junit.framework.AssertionFailedError;
 
 import org.hamcrest.Matcher;
 import org.junit.Before;
@@ -42,6 +45,8 @@ import static androidx.test.espresso.matcher.ViewMatchers.withText;
 @LargeTest
 public class ListPerformanceTest {
 
+    private static final int PAUSE_SCROOL = 2300;
+
     protected ActivityScenario<MainActivity> recyclerViewActivityScenario;
 
     @Before
@@ -59,19 +64,35 @@ public class ListPerformanceTest {
     }
 
     public void forward(){
-        onView(withId(R.id.recyclerview)).perform(
-           swipeUp()
-        );
-        onView(withId(R.id.item_text)).check(matches(withText("100")));
-        onView(isRoot()).perform(waitFor(1100));
+        Boolean isVisible = false;
+        while (!isVisible) {
+            onView(withId(R.id.recyclerview)).perform(
+                swipeUp()
+            );
+            onView(isRoot()).perform(waitFor(PAUSE_SCROOL));
+            try {
+                onView(withText("100")).check(matches(isDisplayed()));
+                isVisible = true;
+            } catch (NoMatchingViewException e) {
+                isVisible = false;
+            }
+        }
     }
 
     public void revert(){
-        onView(withId(R.id.recyclerview)).perform(
-            swipeDown()
-        );
-        onView(withId(R.id.item_text)).check(matches(withText("100")));
-        onView(isRoot()).perform(waitFor(1100));
+        Boolean isVisible = false;
+        while (!isVisible) {
+            onView(withId(R.id.recyclerview)).perform(
+                swipeDown()
+            );
+            onView(isRoot()).perform(waitFor(PAUSE_SCROOL));
+            try {
+                onView(withText("0")).check(matches(isDisplayed()));
+                isVisible = true;
+            } catch (NoMatchingViewException e) {
+                isVisible = false;
+            }
+        }
     }
 
     public static ViewAction swipeUp() {
@@ -92,27 +113,6 @@ public class ListPerformanceTest {
                         Press.FINGER));
     }
 
-//    String getText(final Matcher<View> matcher) {
-//        final String[] stringHolder = { null };
-//        onView(matcher).perform(new ViewAction() {
-//            @Override
-//            public Matcher<View> getConstraints() {
-//                return isAssignableFrom(TextView.class);
-//            }
-//
-//            @Override
-//            public String getDescription() {
-//                return "getting text from a TextView";
-//            }
-//
-//            @Override
-//            public void perform(UiController uiController, View view) {
-//                TextView tv = (TextView)view; //Save, because of check in getConstraints()
-//                stringHolder[0] = tv.getText().toString();
-//            }
-//        });
-//        return stringHolder[0];
-//    }
 
 
 
