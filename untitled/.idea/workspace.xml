@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="76ea998b-5148-42d5-b744-852391c600a7" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="$PROJECT_DIR$/.idea" />
+      </set>
+    </option>
+  </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
+  <component name="ProjectId" id="1ZqINV8RYH2UHihNIf6pAXyXZb6" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/android" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs.jest.jest_package" value="$PROJECT_DIR$/node_modules/jest" />
+    <property name="nodejs_interpreter_path" value="node" />
+    <property name="nodejs_package_manager_path" value="yarn" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/android" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Jest.Simple Appium Example.render home screen">
+    <configuration name="Home Screen" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/jest" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="SUITE" />
+      <test-file value="$PROJECT_DIR$/__tests__/List-Performance-test.js" />
+      <test-names>
+        <test-name value="Home Screen" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="List-Performance-test.js" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/jest" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST_FILE" />
+      <test-file value="$PROJECT_DIR$/__tests__/List-Performance-test.js" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Simple Appium Example (1)" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/jest" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="SUITE" />
+      <test-file value="$PROJECT_DIR$/__tests__/Demo-test.e2e.js" />
+      <test-names>
+        <test-name value="Simple Appium Example" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="Simple Appium Example" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/jest" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="SUITE" />
+      <test-file value="$PROJECT_DIR$/__tests__/Demo-test.js" />
+      <test-names>
+        <test-name value="Simple Appium Example" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="Simple Appium Example.render home screen" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/jest" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/__tests__/Demo-test.e2e.js" />
+      <test-names>
+        <test-name value="Simple Appium Example" />
+        <test-name value="render home screen" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="Android" type="ReactNative" factoryName="React Native">
+      <working-dir value="$PROJECT_DIR$" />
+      <node-interpreter value="project" />
+      <react-native value="$PROJECT_DIR$/node_modules/react-native" />
+      <platform value="ANDROID" />
+      <envs />
+      <only-packager />
+      <method v="2">
+        <option name="ReactNativePackager" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="iOS" type="ReactNative" factoryName="React Native">
+      <working-dir value="$PROJECT_DIR$" />
+      <node-interpreter value="project" />
+      <react-native value="$PROJECT_DIR$/node_modules/react-native" />
+      <platform value="IOS" />
+      <envs />
+      <only-packager />
+      <method v="2">
+        <option name="ReactNativePackager" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Jest.Simple Appium Example.render home screen" />
+        <item itemvalue="Jest.List-Performance-test.js" />
+        <item itemvalue="Jest.Home Screen" />
+        <item itemvalue="Jest.Simple Appium Example (1)" />
+        <item itemvalue="Jest.Simple Appium Example" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="76ea998b-5148-42d5-b744-852391c600a7" name="Default Changelist" comment="" />
+      <created>1585560157356</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1585560157356</updated>
+      <workItem from="1585560158929" duration="1320000" />
+      <workItem from="1585561919462" duration="1624000" />
+      <workItem from="1585564107724" duration="1395000" />
+      <workItem from="1585565945375" duration="1665000" />
+      <workItem from="1585567839296" duration="708000" />
+      <workItem from="1585572261546" duration="1658000" />
+      <workItem from="1585574265626" duration="1645000" />
+      <workItem from="1585576089927" duration="1632000" />
+      <workItem from="1585578163794" duration="380000" />
+      <workItem from="1585578920923" duration="857000" />
+      <workItem from="1585582437341" duration="1332000" />
+      <workItem from="1585584259232" duration="776000" />
+      <workItem from="1585589295447" duration="1633000" />
+      <workItem from="1585591119154" duration="1780000" />
+      <workItem from="1585593290003" duration="1456000" />
+      <workItem from="1585595164865" duration="1784000" />
+      <workItem from="1585598209731" duration="1722000" />
+      <workItem from="1585600627097" duration="1935000" />
+      <workItem from="1585602904090" duration="1683000" />
+      <workItem from="1585604956299" duration="1447000" />
+      <workItem from="1585607060983" duration="813000" />
+      <workItem from="1585654354630" duration="1797000" />
+      <workItem from="1585656272567" duration="1096000" />
+      <workItem from="1585678823405" duration="2040000" />
+      <workItem from="1585682299020" duration="773000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="708" y="187" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1585583522184">
+      <screen x="0" y="23" width="1920" height="1004" />
+    </state>
+    <state x="708" y="187" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1920.1004@0.23.1920.1004" timestamp="1585583522184" />
+    <state x="1082" y="335" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1585589492880">
+      <screen x="0" y="23" width="1920" height="1004" />
+    </state>
+    <state x="1082" y="335" key="#com.intellij.fileTypes.FileTypeChooser/0.23.1920.1004@0.23.1920.1004" timestamp="1585589492880" />
+    <state x="1027" y="388" key="#com.jetbrains.plugins.reactnative.ReactNativePackagerConfigurationEditor" timestamp="1585583519546">
+      <screen x="0" y="23" width="1920" height="1004" />
+    </state>
+    <state x="1027" y="388" key="#com.jetbrains.plugins.reactnative.ReactNativePackagerConfigurationEditor/0.23.1920.1004@0.23.1920.1004" timestamp="1585583519546" />
+    <state width="1599" height="336" key="GridCell.Tab.0.bottom" timestamp="1585655626840">
+      <screen x="0" y="23" width="1920" height="1004" />
+    </state>
+    <state width="1599" height="336" key="GridCell.Tab.0.bottom/0.23.1920.1004@0.23.1920.1004" timestamp="1585655626840" />
+    <state width="1599" height="336" key="GridCell.Tab.0.center" timestamp="1585655626839">
+      <screen x="0" y="23" width="1920" height="1004" />
+    </state>
+    <state width="1599" height="336" key="GridCell.Tab.0.center/0.23.1920.1004@0.23.1920.1004" timestamp="1585655626839" />
+    <state width="1599" height="336" key="GridCell.Tab.0.left" timestamp="1585655626839">
+      <screen x="0" y="23" width="1920" height="1004" />
+    </state>
+    <state width="1599" height="336" key="GridCell.Tab.0.left/0.23.1920.1004@0.23.1920.1004" timestamp="1585655626839" />
+    <state width="1599" height="336" key="GridCell.Tab.0.right" timestamp="1585655626840">
+      <screen x="0" y="23" width="1920" height="1004" />
+    </state>
+    <state width="1599" height="336" key="GridCell.Tab.0.right/0.23.1920.1004@0.23.1920.1004" timestamp="1585655626840" />
+    <state width="1599" height="336" key="GridCell.Tab.1.bottom" timestamp="1585655626841">
+      <screen x="0" y="23" width="1920" height="1004" />
+    </state>
+    <state width="1599" height="336" key="GridCell.Tab.1.bottom/0.23.1920.1004@0.23.1920.1004" timestamp="1585655626841" />
+    <state width="1599" height="336" key="GridCell.Tab.1.center" timestamp="1585655626840">
+      <screen x="0" y="23" width="1920" height="1004" />
+    </state>
+    <state width="1599" height="336" key="GridCell.Tab.1.center/0.23.1920.1004@0.23.1920.1004" timestamp="1585655626840" />
+    <state width="1599" height="336" key="GridCell.Tab.1.left" timestamp="1585655626840">
+      <screen x="0" y="23" width="1920" height="1004" />
+    </state>
+    <state width="1599" height="336" key="GridCell.Tab.1.left/0.23.1920.1004@0.23.1920.1004" timestamp="1585655626840" />
+    <state width="1599" height="336" key="GridCell.Tab.1.right" timestamp="1585655626840">
+      <screen x="0" y="23" width="1920" height="1004" />
+    </state>
+    <state width="1599" height="336" key="GridCell.Tab.1.right/0.23.1920.1004@0.23.1920.1004" timestamp="1585655626840" />
+    <state width="1599" height="336" key="GridCell.Tab.2.bottom" timestamp="1585655626841">
+      <screen x="0" y="23" width="1920" height="1004" />
+    </state>
+    <state width="1599" height="336" key="GridCell.Tab.2.bottom/0.23.1920.1004@0.23.1920.1004" timestamp="1585655626841" />
+    <state width="1599" height="336" key="GridCell.Tab.2.center" timestamp="1585655626841">
+      <screen x="0" y="23" width="1920" height="1004" />
+    </state>
+    <state width="1599" height="336" key="GridCell.Tab.2.center/0.23.1920.1004@0.23.1920.1004" timestamp="1585655626841" />
+    <state width="1599" height="336" key="GridCell.Tab.2.left" timestamp="1585655626841">
+      <screen x="0" y="23" width="1920" height="1004" />
+    </state>
+    <state width="1599" height="336" key="GridCell.Tab.2.left/0.23.1920.1004@0.23.1920.1004" timestamp="1585655626841" />
+    <state width="1599" height="336" key="GridCell.Tab.2.right" timestamp="1585655626841">
+      <screen x="0" y="23" width="1920" height="1004" />
+    </state>
+    <state width="1599" height="336" key="GridCell.Tab.2.right/0.23.1920.1004@0.23.1920.1004" timestamp="1585655626841" />
+    <state width="1599" height="336" key="GridCell.Tab.3.bottom" timestamp="1585655626842">
+      <screen x="0" y="23" width="1920" height="1004" />
+    </state>
+    <state width="1599" height="336" key="GridCell.Tab.3.bottom/0.23.1920.1004@0.23.1920.1004" timestamp="1585655626842" />
+    <state width="1599" height="336" key="GridCell.Tab.3.center" timestamp="1585655626841">
+      <screen x="0" y="23" width="1920" height="1004" />
+    </state>
+    <state width="1599" height="336" key="GridCell.Tab.3.center/0.23.1920.1004@0.23.1920.1004" timestamp="1585655626841" />
+    <state width="1599" height="336" key="GridCell.Tab.3.left" timestamp="1585655626841">
+      <screen x="0" y="23" width="1920" height="1004" />
+    </state>
+    <state width="1599" height="336" key="GridCell.Tab.3.left/0.23.1920.1004@0.23.1920.1004" timestamp="1585655626841" />
+    <state width="1599" height="336" key="GridCell.Tab.3.right" timestamp="1585655626842">
+      <screen x="0" y="23" width="1920" height="1004" />
+    </state>
+    <state width="1599" height="336" key="GridCell.Tab.3.right/0.23.1920.1004@0.23.1920.1004" timestamp="1585655626842" />
+    <state x="400" y="123" width="1420" height="804" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1585654697842">
+      <screen x="0" y="23" width="1920" height="1004" />
+    </state>
+    <state x="400" y="123" width="1420" height="804" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.23.1920.1004@0.23.1920.1004" timestamp="1585654697842" />
+    <state x="650" y="201" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1585562415103">
+      <screen x="0" y="23" width="1920" height="1004" />
+    </state>
+    <state x="650" y="201" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.23.1920.1004@0.23.1920.1004" timestamp="1585562415103" />
+    <state x="907" y="282" width="667" height="486" key="find.popup" timestamp="1585590910169">
+      <screen x="0" y="23" width="1920" height="1004" />
+    </state>
+    <state x="907" y="282" width="667" height="486" key="find.popup/0.23.1920.1004@0.23.1920.1004" timestamp="1585590910169" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/__tests__/List-Performance-test.e2e.js</url>
+          <line>35</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/__tests__/List-Performance-test.e2e.js</url>
+          <line>33</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
