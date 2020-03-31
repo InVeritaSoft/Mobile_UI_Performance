@@ -64,19 +64,29 @@ public class ListPerformanceTest {
     }
 
     public void forward(){
-        Boolean isVisible = false;
-        while (!isVisible) {
+
+        while (true) {
             onView(withId(R.id.recyclerview)).perform(
-                swipeUp()
+                    swipeUp()
             );
             onView(isRoot()).perform(waitFor(PAUSE_SCROOL));
-            try {
-                onView(withText("100")).check(matches(isDisplayed()));
-                isVisible = true;
-            } catch (NoMatchingViewException e) {
-                isVisible = false;
-            }
         }
+//
+//        Boolean isVisible = false;
+//        while (!isVisible) {
+//            onView(withId(R.id.recyclerview)).perform(
+//                swipeUp()
+//            );
+//            onView(isRoot()).perform(waitFor(PAUSE_SCROOL));
+//            try {
+//                onView(withText("1000")).check(matches(isDisplayed()));
+//                isVisible = true;
+//            } catch (NoMatchingViewException e) {
+//                isVisible = false;
+//            }
+//        }
+
+
     }
 
     public void revert(){

@@ -25,7 +25,7 @@ extension UIColor {
 
 
 struct ContentView: View {
-   let numbers = Array(0...101);
+   let numbers = Array(0...1001);
    //let list =  numbers.map{str in Container(index: str) }
    var body: some View {
     List(numbers,id: \.self) { index in
@@ -35,7 +35,7 @@ struct ContentView: View {
                 alignment: .center
                 ).padding(0.0).accessibility(identifier: "item_\(index)")
         }.frame(height: 100).background(Color(UIColor.random())).padding(0.0)
-    }.accessibility(identifier: "list").padding(0.0)
+    }.accessibility(identifier: "long_list").padding(0.0)
     }
 }
 

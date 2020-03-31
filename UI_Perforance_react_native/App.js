@@ -32,6 +32,7 @@ export default FlatListBasics = () => {
     <SafeAreaView style={styles.container}>
       <View style={styles.container}>
         <FlatList
+          testID={'long_list'}
           accessibilityLabel={'long_list'}
           data={data}
           ItemSeparatorComponent={FlatListItemSeparator}

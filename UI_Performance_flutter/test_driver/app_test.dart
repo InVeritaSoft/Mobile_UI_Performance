@@ -4,8 +4,10 @@
 import 'package:flutter_driver/flutter_driver.dart';
 import 'package:test/test.dart';
 
-const pauseScroolDuration = Duration(seconds: 2);
-const scroolDuration =  Duration(milliseconds: 800);
+
+
+const pauseScroolDurationAndroid = Duration(seconds: 2);
+const scroolDurationAndroid =  Duration(milliseconds: 800);
 
 void main() {
 
@@ -76,8 +78,8 @@ void main() {
           listFinder,
           item1000Finder,
           dyScroll: step,
-          scroolDuration: scroolDuration,
-          pauseDuration: pauseScroolDuration
+          scroolDuration: scroolDurationAndroid,
+          pauseDuration: pauseScroolDurationAndroid
         );
         expect(
           await driver.getText(item1000Finder),
@@ -93,8 +95,8 @@ void main() {
           listFinder,
           item0Finder,
           dyScroll: step,
-          scroolDuration: scroolDuration,
-          pauseDuration: pauseScroolDuration
+          scroolDuration: scroolDurationAndroid,
+          pauseDuration: pauseScroolDurationAndroid
         );
         expect(
           await driver.getText(item0Finder),
@@ -106,11 +108,8 @@ void main() {
         await forwart(-step);
         await revert(step);
       }
-    }, timeout: Timeout(Duration(minutes: 5)));
+    }, timeout: Timeout(Duration(minutes: 60)));
 
   });
-
-
-
 
 }

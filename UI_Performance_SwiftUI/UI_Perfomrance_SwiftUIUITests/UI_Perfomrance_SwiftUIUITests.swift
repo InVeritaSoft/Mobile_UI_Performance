@@ -22,24 +22,26 @@ class UI_Perfomrance_SwiftUIUITests: XCTestCase {
     func testScrool() {
         let app = XCUIApplication()
         app.launch()
-        for _ in 0...1 {
-            forward(app: app)
-            revert(app: app)
-        }
+        forward(app: app)
+        //for _ in 0...1 {
+            //revert(app: app)
+        //}
     }
     
-    func revert(app: XCUIApplication){
-        let table = app.tables.element(boundBy: 0)
-        let firstCell = table.cells.element(boundBy: 0)
-        table.scrollToElement(element: firstCell,direction: XCUIElement.Direction.Down)
-    }
+
     
     func forward(app: XCUIApplication){
-        let table = app.tables.element(boundBy: 0)
-        let lastCell = table.cells.element(boundBy:table.cells.count-1)
-        table.scrollToElement(element: lastCell,direction: XCUIElement.Direction.Up)
+        let table = app.otherElements["long_list"];
+        let lastCell = table.textViews["item_1000"];//table.cells.element(boundBy:table.cells.count-1)
+        app.scrollToElement(element: lastCell,direction: XCUIElement.Direction.Up)
     }
     
+//    func revert(app: XCUIApplication){
+//        let table = app.tables.element(boundBy: 0)
+//        let firstCell = table.cells.element(boundBy: 0)
+//        table.scrollToElement(element: firstCell,direction: XCUIElement.Direction.Down)
+//    }
+//
 
 
     func testLaunchPerformance() {
@@ -56,7 +58,7 @@ extension XCUIElement
     
     func scrollToElement(element: XCUIElement,direction: Direction) {
         if (direction == .Up){
-            while !element.visible() {
+            while true {
                 swipeUp()
             }
         }else{

@@ -15,11 +15,10 @@ import java.util.Random;
 
 public class PerformanceAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
-    final int ITEM_COUNTS = 101;
+    final int ITEM_COUNTS = 1001;
+
     public final int TYPE_CONTAINER = R.layout.item_contaner;
     public final int TYPE_OTHER = R.layout.item_other;
-
-
 
     @NonNull
     @Override
