@@ -5,7 +5,7 @@ import 'package:flutter_driver/flutter_driver.dart';
 import 'package:test/test.dart';
 
 const pauseScroolDuration = Duration(seconds: 2);
-const  scroolDuration =  Duration(milliseconds: 800);
+const scroolDuration =  Duration(milliseconds: 800);
 
 void main() {
 
@@ -69,19 +69,19 @@ void main() {
 
         final listFinder = find.byValueKey('long_list');
 
-        final item100Finder = find.byValueKey('item_100_text');
+        final item1000Finder = find.byValueKey('item_1000_text');
 
         await scrollUntilVisible(
           driver,
           listFinder,
-          item100Finder,
+          item1000Finder,
           dyScroll: step,
           scroolDuration: scroolDuration,
           pauseDuration: pauseScroolDuration
         );
         expect(
-          await driver.getText(item100Finder),
-          '100',
+          await driver.getText(item1000Finder),
+          '1000',
         );
       };
 
