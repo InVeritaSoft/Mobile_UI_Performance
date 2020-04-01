@@ -7,7 +7,7 @@ import 'package:test/test.dart';
 
 
 const pauseScroolDurationAndroid = Duration(seconds: 2);
-const scroolDurationAndroid =  Duration(milliseconds: 800);
+const scroolDurationAndroid =  Duration(milliseconds: 850);
 
 void main() {
 

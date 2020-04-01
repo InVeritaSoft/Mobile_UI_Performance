@@ -41,7 +41,7 @@
       "android-emulator": {
         "platformName": "Android",
         "deviceName": "Redmi Note 5",
-        "app": "/Users/nazarko/FlutterProjects/UI_Mobile_Performance/untitled/android/app/build/outputs/apk/debug/app-debug.apk"
+        "app": "/Users/nazarko/FlutterProjects/UI_Mobile_Performance/UI_Perforance_react_native/android/app/build/outputs/apk/debug/app-debug.apk"
       }
     }
   }
