@@ -28,12 +28,26 @@ class UI_Perfomrance_SwiftUIUITests: XCTestCase {
         //}
     }
     
+    func customSwipe(refElement:XCUIElement,startdelxy:CGVector,enddeltaxy: CGVector){
+          let swipeStartPoint = refElement.coordinate(withNormalizedOffset: startdelxy)
+          let swipeEndPoint = refElement.coordinate(withNormalizedOffset: enddeltaxy)
+          swipeStartPoint.press(forDuration: 0.01, thenDragTo: swipeEndPoint)
+
+    }
 
     
     func forward(app: XCUIApplication){
         let table = app.otherElements["long_list"];
-        let lastCell = table.textViews["item_1000"];//table.cells.element(boundBy:table.cells.count-1)
-        app.scrollToElement(element: lastCell,direction: XCUIElement.Direction.Up)
+        while(true){
+            customSwipe(
+                refElement: table,
+                startdelxy: CGVector.init(dx: 0.0, dy: 0.6),
+                enddeltaxy: CGVector.init(dx: 0.0, dy: 0.0)
+            );
+        }
+        //let table = app.otherElements["long_list"];
+        //let lastCell = table.textViews["item_1000"];//table.cells.element(boundBy:table.cells.count-1)
+        //app.scrollToElement(element: lastCell,direction: XCUIElement.Direction.Up)
     }
     
 //    func revert(app: XCUIApplication){
