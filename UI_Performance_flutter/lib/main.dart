@@ -1,6 +1,10 @@
 import 'dart:math';
+import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
+
+Random rand = Random();
 
 void main() {
   runApp(MyApp());
@@ -22,11 +26,11 @@ class MyApp extends StatelessWidget {
 }
 
 
-class TestPage extends StatelessWidget {
+class TestPage extends StatelessWidget{
 
   TestPage({Key key, this.title}) : super(key: key);
 
-  Random rand = Random();
+
 
   final String title;
 
@@ -40,23 +44,92 @@ class TestPage extends StatelessWidget {
         },
         itemCount: 1001,
         itemBuilder: (context,index){
-          return  Container(
-            height: 100,color: randomColor(),
-            child: Center(
-              child: Text(
-                index.toString(),
-                key: ValueKey('item_${index}_text'),
-              ),
-            ),
-          );
+
+          return  Cell(index:index);
         },
       ),
     );
   }
 
-  randomColor(){
+
+
+}
+
+class Cell extends StatefulWidget {
+
+  final int index;
+
+
+  Cell({Key key, this.index}) : super(key: key);
+
+  @override
+  _CellState createState() => _CellState();
+}
+
+class _CellState extends State<Cell> with TickerProviderStateMixin {
+
+  AnimationController rotationController;
+
+  @override
+  void initState() {
+    super.initState();
+    rotationController = AnimationController(duration: const Duration(milliseconds: 3000), vsync: this);
+    rotationController.addStatusListener((status) {
+      if(status == AnimationStatus.completed){
+        rotationController.forward(from:0.0);
+      }
+    });
+    rotationController.forward();
+
+  }
+
+  @override
+  void dispose() {
+    rotationController.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 100,color: randomColor(),
+      child: Row(
+        children: <Widget>[
+          Image.asset(
+            getImage(widget.index),
+            height: 100.0,
+            width: 100.0,
+            fit: BoxFit.fill,
+          ),
+          RotationTransition(
+            turns:Tween(begin: 0.0, end: 1.0).animate(rotationController),
+            child: Image.asset(
+              getImage(widget.index),
+              height: 100.0,
+              width: 100.0,
+              fit: BoxFit.fill,
+            ),
+          ),
+
+          Center(
+            child: Text(
+              widget.index.toString(),
+              key: ValueKey('item_${widget.index}_text'),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  static randomColor(){
     return Color((rand.nextDouble() * 0xFFFFFF).toInt() << 0).withOpacity(1.0);
   }
 
 
+  static getImage(index){
+    var  url  = 'assets/images/${index % 20}.jpeg';
+    return url;
+  }
 }
+
