@@ -67,7 +67,7 @@ struct CellView: View {
             .onAppear {self.isAnimating = true}
         Text("\(self.index)").frame(
             maxWidth: .infinity,
-            alignment: .center
+            alignment: .topLeading
         ).padding(0.0).accessibility(identifier: "item_\(self.index)")
     }.frame(height: 100).background(Color(UIColor.random())).padding(0.0)
   }
