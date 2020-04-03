@@ -73,6 +73,7 @@ public class PerformanceAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
         TextView mItemText;
         ImageView mImageView;
         ImageView mRotareImageView;
+        Animation mRotation;
 
 
         public ViewHolder(View v) {
@@ -81,6 +82,9 @@ public class PerformanceAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
             mItemText = v.findViewById(R.id.item_text);
             mImageView = v.findViewById(R.id.imageView);
             mRotareImageView = v.findViewById(R.id.rotareImageView);
+            mRotation = AnimationUtils.loadAnimation(v.getContext(), R.anim.rotare);
+            mRotation.setFillAfter(true);
+
         }
 
         public void bind(final int index,Context context) {
@@ -90,9 +94,7 @@ public class PerformanceAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
             Glide.with(context)
                     .load(Uri.parse("file:///android_asset/"+getImage(index)))
                     .into(mRotareImageView);
-            Animation rotation = AnimationUtils.loadAnimation(context, R.anim.rotare);
-            rotation.setFillAfter(true);
-            mRotareImageView.startAnimation(rotation);
+            mRotareImageView.setAnimation(mRotation);
             mItemText.setText(String.valueOf(index));
             mContentContainer.setBackgroundColor(randomColor());
         }

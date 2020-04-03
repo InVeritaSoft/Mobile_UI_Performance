@@ -24,23 +24,80 @@ extension UIColor {
 }
 
 
+
 struct ContentView: View {
+    
+    
    let numbers = Array(0...1001);
-   //let list =  numbers.map{str in Container(index: str) }
    var body: some View {
     List(numbers,id: \.self) { index in
-        HStack {
-            Text("\(index)").frame(
-                maxWidth: .infinity,
-                alignment: .center
-                ).padding(0.0).accessibility(identifier: "item_\(index)")
-        }.frame(height: 100).background(Color(UIColor.random())).padding(0.0)
+        CellView(index)
     }.accessibility(identifier: "long_list").padding(0.0)
     }
 }
 
+struct CellView: View {
+    
+   @State var angle: Double = 0.0
+   @State var isAnimating = false
+    
+    var index: Int
+
+    init(_ index: Int) {
+        self.index = index
+    }
+   
+    var foreverAnimation: Animation {
+        Animation.linear(duration: 2.0)
+            .repeatForever(autoreverses: false)
+    }
+    
+   let numbers = Array(0...1001);
+    
+   var body: some View {
+    HStack {
+        Image("\(self.index % 20)")
+            .resizable()
+            .frame(width:100,height: 100)
+        Image("\(self.index % 20)")
+            .resizable()
+            .frame(width:100,height: 100)
+            .rotationEffect(Angle(degrees: self.isAnimating ? 360.0 : 0.0))
+            .animation(self.foreverAnimation)
+            .onAppear {self.isAnimating = true}
+        Text("\(self.index)").frame(
+            maxWidth: .infinity,
+            alignment: .center
+        ).padding(0.0).accessibility(identifier: "item_\(self.index)")
+    }.frame(height: 100).background(Color(UIColor.random())).padding(0.0)
+  }
+}
+
+struct PeopleList : View {
+    @State var angle: Double = 0.0
+    @State var isAnimating = false
+
+    var foreverAnimation: Animation {
+        Animation.linear(duration: 2.0)
+            .repeatForever(autoreverses: false)
+    }
+
+    var body: some View {
+        Button(action: {}, label: {
+            Image(systemName: "2")
+                .rotationEffect(Angle(degrees: self.isAnimating ? 360.0 : 0.0))
+                .animation(self.foreverAnimation)
+                .onAppear {
+                    self.isAnimating = true
+            }
+        })
+    }
+}
+    
+
+
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView().padding(0.0)
+        PeopleList().padding(0.0)
     }
 }
