@@ -23,8 +23,10 @@ class TableViewController: UITableViewController {
 extension TableViewController {
 
     func setupUI() {
-        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .done, target: self, action: nil)
+//        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .done, target: self, action: nil)
         tableView.reloadData()
+        tableView.isAccessibilityElement = true
+        tableView.accessibilityIdentifier = "long_list"
     }
 
 }

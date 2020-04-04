@@ -37,12 +37,12 @@ class UI_Perfomrance_SwiftUIUITests: XCTestCase {
 
     
     func forward(app: XCUIApplication){
-        let table = app.otherElements["long_list"];
+        //let table = app.otherElements["long_list"].firstMatch;
         while(true){
             customSwipe(
-                refElement: table,
-                startdelxy: CGVector.init(dx: 0.0, dy: 0.6),
-                enddeltaxy: CGVector.init(dx: 0.0, dy: 0.0)
+                refElement: app,
+                startdelxy: CGVector.init(dx: 0.0, dy: 0.8),
+                enddeltaxy: CGVector.init(dx: 0.0, dy: 0.2)
             );
         }
         //let table = app.otherElements["long_list"];
@@ -58,13 +58,13 @@ class UI_Perfomrance_SwiftUIUITests: XCTestCase {
 //
 
 
-    func testLaunchPerformance() {
-        if #available(macOS 10.15, iOS 13.0, tvOS 13.0, *) {
-            measure(metrics: [XCTOSSignpostMetric.applicationLaunch]) {
-                XCUIApplication().launch()
-            }
-        }
-    }
+//    func testLaunchPerformance() {
+//        if #available(macOS 10.15, iOS 13.0, tvOS 13.0, *) {
+//            measure(metrics: [XCTOSSignpostMetric.applicationLaunch]) {
+//                XCUIApplication().launch()
+//            }
+//        }
+//    }
 }
 
 extension XCUIElement
