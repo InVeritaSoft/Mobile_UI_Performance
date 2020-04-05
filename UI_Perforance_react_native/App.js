@@ -6,7 +6,7 @@
  * @flow strict-local
  */
 
-import React from 'react';
+import React, {Component, createRef} from 'react';
 import {
   FlatList,
   StyleSheet,
@@ -16,6 +16,7 @@ import {
   Image,
   Animated,
   Easing,
+  Button,
 } from 'react-native';
 
 let data = Array(1001);
@@ -33,6 +34,8 @@ for (var i = 0; i < data.length; i++) {
     color: color,
   };
 }
+let flatList = createRef();
+
 
 // eslint-disable-next-line no-undef
 let FlatListBasics;
@@ -41,6 +44,9 @@ export default FlatListBasics = () => {
     <SafeAreaView style={styles.container}>
       <View style={styles.container}>
         <FlatList
+          scrollEnabled={true}
+          flatListRef={React.createRef()}
+          ref={flatList}
           testID={'long_list'}
           accessibilityLabel={'long_list'}
           data={data}
@@ -54,10 +60,23 @@ export default FlatListBasics = () => {
             );
           }}
         />
+        <View
+          style={{
+            left: 0,
+            position: 'absolute',
+            right: 0,
+            top: 0,
+          }}>
+          <Button onPress={startScrool()} title="Start scrool" color="grey" />
+        </View>
       </View>
     </SafeAreaView>
   );
 };
+
+function startScrool() {
+  //flatList.scrollToOffset({offset: 130});
+}
 
 const FlatListItemSeparator = () => {
   return <View style={{height: 16, width: '100%', backgroundColor: '#FFF'}} />;
@@ -119,7 +138,6 @@ const CustomRow = ({index, color, label}) => {
         source={getImage(index)}
         resizeMode={'stretch'}
       />
-
       <Text accessibilityLabel={label} style={styles.item}>
         {index}
       </Text>

@@ -6,6 +6,8 @@ import 'package:flutter/rendering.dart';
 
 Random rand = Random();
 
+final  Duration  DURATION_SCROOL = Duration(seconds: 500);
+
 void main() {
   runApp(MyApp());
 }
@@ -31,28 +33,48 @@ class TestPage extends StatelessWidget{
   TestPage({Key key, this.title}) : super(key: key);
 
 
-
   final String title;
+  final ScrollController scrollController = ScrollController();
+
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: ListView.separated(
-        key: ValueKey('long_list'),
-        separatorBuilder: (context,int){
-          return Divider();
-        },
-        itemCount: 1001,
-        itemBuilder: (context,index){
 
-          return  Cell(index:index);
-        },
+    var offset = MediaQuery.of(context).size.height / 4 ;
+
+    return Scaffold(
+      body: Stack(
+        children: <Widget>[
+          ListView.separated(
+            controller: scrollController,
+            key: ValueKey('long_list'),
+            separatorBuilder: (context,int){
+              return Divider();
+            },
+            itemCount: 1001,
+            itemBuilder: (context,index){
+              return  Cell(index:index);
+            },
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 32.0),
+            child: SizedBox(
+              width: double.infinity,
+              child: RaisedButton(
+                onPressed: ()async{
+                    await scrollController.animateTo(
+                          1000.0 * (100 + 16),
+                          duration: DURATION_SCROOL,
+                          curve: Curves.linear
+                    );
+                },
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
-
-
-
 }
 
 class Cell extends StatefulWidget {
@@ -64,6 +86,7 @@ class Cell extends StatefulWidget {
 
   @override
   _CellState createState() => _CellState();
+
 }
 
 class _CellState extends State<Cell> with TickerProviderStateMixin {
@@ -80,7 +103,6 @@ class _CellState extends State<Cell> with TickerProviderStateMixin {
       }
     });
     rotationController.forward();
-
   }
 
   @override
